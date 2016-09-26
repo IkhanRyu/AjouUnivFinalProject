@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <script src="js/vendor.bundle.js"></script>
+         <script src="js/app.bundle.js"></script>
+        
+    </head>
+    <body ng-app="dashboard">
+        <div class="container">
+        <br />
+        <div ng-controller="dashboardController as ctrl">
+            <div class="alert alert-danger" ng-class="{'alert-danger': !ctrl.github, 'alert-success': ctrl.github}">Hello World! <yep-nope check="ctrl.github"></yep-nope></div>
+        </div>
+        </div>
+    </body>
+</html>
