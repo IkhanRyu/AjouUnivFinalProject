@@ -1,9 +1,9 @@
-'use strict';
-
 /**
  * Module dependencies.
  */
-import home from '../app/controllers/home';
+import handle from '../app/controllers/controllerResultHandler';
+// import home from '../app/controllers/home';
+import user from '../app/controllers/user';
 
 /**
  * Expose
@@ -11,8 +11,11 @@ import home from '../app/controllers/home';
 
 export default function (app, passport) {
 
-  app.get('/', home.index);
+  // app.get('/', home.index);
 
+  app.post('/user/:id', handle(user.create));
+  app.get('/user/:id', handle(user.find));
+  
   /**
    * Error handling
    */
