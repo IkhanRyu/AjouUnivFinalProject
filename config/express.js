@@ -2,15 +2,15 @@
  * Module dependencies.
  */
 
-var express = require('express');
-var session = require('express-session');
-var compression = require('compression');
-var morgan = require('morgan');
-var cookieParser = require('cookie-parser');
-var cookieSession = require('cookie-session');
-var bodyParser = require('body-parser');
-var methodOverride = require('method-override');
-var csrf = require('csurf');
+import express from 'express';
+import session from 'express-session';
+import compression from 'compression'
+import morgan from 'morgan'
+import cookieParser from 'cookie-parser';
+import cookieSession from 'cookie-session';
+import bodyParser from 'body-parser';
+import methodOverride from 'method-override';
+import csrf from 'csurf';
 
 var mongoStore = require('connect-mongo')(session);
 var flash = require('connect-flash');
@@ -54,8 +54,8 @@ export default function (app, passport) {
     if (env !== 'test') app.use(morgan(format, option));
 
     // set views path and default layout
-    app.set('views', config.root + '/app/views');
-    app.set('view engine', 'jade');
+    // app.set('views', config.root + '/app/views');
+    // app.set('view engine', 'jade');
 
     // expose package.json to views
     app.use(function (req, res, next) {
